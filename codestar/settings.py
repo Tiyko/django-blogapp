@@ -33,7 +33,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-ALLOWED_HOSTS = ['blog-app-django-py.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['blog-app-django-py.herokuapp.com', 'localhost']
 # if development:
 #     ALLOWED_HOSTS = ['localhost']
 # else:
