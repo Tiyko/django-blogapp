@@ -33,11 +33,11 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['blog-app-django-py.herokuapp.com/', 'localhost']
 if development:
     ALLOWED_HOSTS = ['localhost']
 else:
-    ALLOWED_HOSTS = [config('HEROKU_HOSTNAME')]
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 # Application definition
 
