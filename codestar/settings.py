@@ -18,7 +18,7 @@ from django.contrib.messages import constants as messages
 # if os.path.isfile('env.py'):
 #     import env
 
-development = config('DEV_MODE', default=False, cast=bool)
+# development = config('DEV_MODE', default=False, cast=bool)
 # development = os.environ.get('DEVELOPMENT')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,7 +32,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = development
+DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
