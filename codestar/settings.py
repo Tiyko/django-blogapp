@@ -18,7 +18,7 @@ from django.contrib.messages import constants as messages
 # if os.path.isfile('env.py'):
 #     import env
 
-# development = config('DEV_MODE', default=False, cast=bool)
+development = config('DEV_MODE', default=False, cast=bool)
 # development = os.environ.get('DEVELOPMENT')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,7 +32,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = development
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -113,16 +113,16 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# if development:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
 
-#             'NAME': BASE_DIR / 'db.sqlite3',
-#         }
-#     }
-# else:
-DATABASES = {
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
         'default': dj_database_url.parse(config('DATABASE_URL'))
     }
 
